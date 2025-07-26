@@ -117,6 +117,7 @@ php artisan migrate:refresh
 <details>
 	<summary><b>View Answer</b></summary>
 <ul>
+
 ### **What is `query()` in Laravel Eloquent?**  
 `query()` is a method provided by Laravel's Eloquent ORM that **initializes a new query builder instance** for a model. It allows you to construct and execute database queries fluently.  
 

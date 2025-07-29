@@ -200,6 +200,100 @@ php artisan migrate:refresh
 </ul>
 </details>
 
+**4. N+1 Queries in laravel ?**
+
+<details>
+	<summary><b>View Answer</b></summary>
+<ul>
+
+# Understanding How N+1 Queries Work in Laravel
+
+Let me explain the N+1 query problem step-by-step with a clear example.
+
+## Example Scenario
+
+Imagine you have two models:
+- `Book` (belongs to Author)
+- `Author` (has many Books)
+
+## The N+1 Query Process
+
+### 1. Initial Query (The "1")
+```php
+$books = Book::all(); // 1 query to fetch all books
+```
+
+This executes:
+```sql
+SELECT * FROM books;
+```
+
+### 2. Relationship Access in Loop (The "N")
+```php
+foreach ($books as $book) {
+    echo $book->author->name; // N queries (1 per book)
+}
+```
+
+For each book, this executes:
+```sql
+SELECT * FROM authors WHERE id = [book's author_id];
+```
+
+## Visual Breakdown
+
+If you have:
+- 100 books in your database
+- Each book has 1 author
+
+The queries will be:
+1. `SELECT * FROM books;` (1 query)
+2. Then for each book:
+   - `SELECT * FROM authors WHERE id = 1;`
+   - `SELECT * FROM authors WHERE id = 2;`
+   - ...
+   - `SELECT * FROM authors WHERE id = 100;`
+
+Total queries: 101 (1 + N where N=100)
+
+## Why This is Problematic
+
+1. **Performance Impact**: Each query has overhead (network latency, query parsing, etc.)
+2. **Database Load**: Instead of 1-2 queries, you're making 101
+3. **Scalability Issues**: As your data grows (1,000 books → 1,001 queries), performance degrades rapidly
+
+## How Eager Loading Solves This
+
+When you use `with()`:
+
+```php
+$books = Book::with('author')->get(); // 2 queries total
+```
+
+1. First query gets all books:
+```sql
+SELECT * FROM books;
+```
+
+2. Second query gets all related authors in one go:
+```sql
+SELECT * FROM authors WHERE id IN (1, 2, 3, ..., 100);
+```
+
+Then Laravel internally matches authors to their books, so accessing `$book->author` doesn't need new queries.
+
+## Key Takeaways
+
+- N+1 happens when you access relationships in a loop without eager loading
+- The "1" is your initial query for parent models
+- The "N" is the separate queries for each relationship access
+- Eager loading replaces N+1 with 1+1 (or similar small number)
+- The performance difference becomes dramatic as N grows
+
+Would you like me to explain any specific aspect of this process in more detail?
+</ul>
+</details>
+
 **100. What is the default database system used in Laravel?**
 ```php
 A) PostgreSQL

@@ -110,16 +110,16 @@ Understanding this life cycle helps you properly extend model behavior and hook 
 - **model**  
   lifecycle events allow you execute code during model lifecycle event.  
 
-- **Refined**  
-  Creating (3) created (5) saving (6) saved (7) updating (8) updated (9) deleting (10) deleted (11) restoring (12) restored.  
+ 
+  (1) Retrieved (2)Creating (3) created (4) saving (5) saved (6) updating (7) updated (8) deleting (9) deleted (10) restoring (11) restored.  
 
 ---
 
-1. Refined event will be fixed when existing model is refuted from the database.  
+1. Retrieved event will be fixed when existing model is refuted from the database.  
 2. When model is saved for the first time then creating and created event will be fixed.  
 3. If a model already exists in database and we update it then updating and updated event will be fixed.  
 4. While in both creating/created and updating/updated saving and saved event will be fixed.  
-5. Decliting and deleted event will be fixed while deleting a model.  
+5. Deleting and deleted event will be fixed while deleting a model.  
 6. Restoring and restored event will be fixed while restoring a model.  
 
 ---

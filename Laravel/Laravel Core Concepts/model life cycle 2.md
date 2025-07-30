@@ -1,8 +1,7 @@
-Here's a consolidated, refined summary of Laravel Model Life Cycle Events with best practices:
-
----
 
 # **Laravel Model Life Cycle: Ultimate Guide**
+
+The Laravel model life cycle refers to the sequence of events that occur when interacting with Eloquent models. Understanding this life cycle is crucial for effectively working with models in Laravel applications.Lifecycle events allow you execute code during model lifecycle event.
 
 ## **Core Life Cycle Events**
 1. **Retrieved** - After fetching from DB
@@ -40,6 +39,12 @@ protected static function boot()
     
     static::created(function($model) {
         // Immediate logic
+        // $user
+    });
+
+    static::updated(function($model) {
+        // Immediate logic
+        // $user
     });
 }
 ```

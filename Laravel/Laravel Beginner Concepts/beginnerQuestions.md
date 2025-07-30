@@ -294,6 +294,58 @@ Would you like me to explain any specific aspect of this process in more detail?
 </ul>
 </details>
 
+**5. Difference between composer install and composer update?**
+
+
+<details>
+	<summary><b>View Answer</b></summary>
+<ul>
+In Composer, `install` and `update` are two essential commands, but they serve different purposes:
+
+### **1. `composer install`**
+- **Purpose**: Installs dependencies as specified in the `composer.lock` file (if it exists).
+- **Behavior**:
+  - If `composer.lock` exists, Composer installs the exact versions listed there.
+  - If `composer.lock` does not exist, Composer generates it by resolving dependencies from `composer.json` (similar to `composer update`).
+- **When to use**:
+  - After cloning a project (to get the exact versions of dependencies).
+  - When you want a predictable, locked dependency state.
+  - Faster than `update` because it doesn’t resolve new versions.
+
+### **2. `composer update`**
+- **Purpose**: Updates dependencies to their latest allowed versions (based on `composer.json` constraints) and regenerates `composer.lock`.
+- **Behavior**:
+  - Ignores `composer.lock` and checks for newer versions within version constraints.
+  - Updates packages and writes new versions to `composer.lock`.
+- **When to use**:
+  - When you want to update dependencies to newer versions.
+  - When you’ve manually changed `composer.json` and need to sync dependencies.
+  - Can be slow because it resolves dependency versions again.
+
+### **Key Differences**
+| Feature                | `composer install` | `composer update` |
+|------------------------|--------------------|-------------------|
+| Reads `composer.lock`  | ✅ Yes             | ❌ No (ignores it) |
+| Updates dependencies   | ❌ No (uses lock)  | ✅ Yes            |
+| Generates `composer.lock` | Only if missing  | ✅ Always         |
+| Speed                  | ⚡ Faster         | 🐢 Slower         |
+
+### **Best Practices**
+- Use **`composer install`** in production to ensure consistency.
+- Use **`composer update`** when you want to upgrade dependencies (e.g., `composer update vendor/package` to update a specific package).
+
+</ul>
+</details>
+
+**6. Difference between composer.json install and composer.lock?**
+
+<details>
+	<summary><b>View Answer</b></summary>
+<ul>
+Answer: C
+</ul>
+</details>
+
 **100. What is the default database system used in Laravel?**
 ```php
 A) PostgreSQL

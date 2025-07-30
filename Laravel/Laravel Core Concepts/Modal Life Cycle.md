@@ -131,15 +131,12 @@ Understanding this life cycle helps you properly extend model behavior and hook 
 3. Observer.
 
 
-Here's the converted markdown file based on the content of your image:
 
-```markdown
 # Model life cycle event
 
 ## ① Event listener:
 
 ```php
-// User.php
 protected $dispatchesEvents = [
     'created' => UserCreated::class
 ];

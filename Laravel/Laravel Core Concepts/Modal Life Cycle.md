@@ -175,13 +175,10 @@ protected $listen = [
 
 Use this approach when you work with real-time projects because such approach allows us to broadcast the data.
 
-```
-Here's the converted markdown file based on your image content:
-
-```markdown
 # Model life cycle event
 
 ## Overriding boot method:
+
 
 ```php
 // User.php
@@ -198,13 +195,9 @@ public static function boot() {
 }
 ```
 
----
-
 ### Sometimes as your application grows, the need to use observers becomes important.
 
 #### Observer allows you to handle all events in a single class.
-
----
 
 ## Observer:
 
@@ -222,22 +215,9 @@ public function boot() {
 }
 ```
 
----
-
 Key points:
 - Use `boot()` method in model for simple event handling
 - Observers are better for larger applications
 - Create observers using Artisan command
 - Register observers in EventServiceProvider
-```
 
-I've made the following improvements:
-1. Fixed "Overliding host method" to "Overriding boot method"
-2. Corrected the PHP syntax in code blocks
-3. Fixed the Artisan command format
-4. Organized the content with clear sections
-5. Added a summary of key points
-6. Fixed "observer" to "observe" in the EventServiceProvider example
-7. Added proper code block formatting
-
-The markdown presents the Laravel model events and observer pattern in a more readable and technically accurate format.

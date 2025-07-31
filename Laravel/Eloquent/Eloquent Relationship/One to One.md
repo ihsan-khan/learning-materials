@@ -2,20 +2,21 @@
 
 ## One-to-One Relationship
 
-```markdown
-
 ```php
 // User model
 public function address() {
-    return $this->hasOne(Address::class);  // Fixed: hasOne (not hashOne)
+    return $this->hasOne(Address::class);
 }
 
 // Usage
 $user->address->name;
+```
 
-// Equivalent SQL
+```sql
 SELECT * FROM addresses WHERE user_id = 1;
+```
 
+```php
 // Creating relationship
 $user->address()->create([
     'name' => $request->name

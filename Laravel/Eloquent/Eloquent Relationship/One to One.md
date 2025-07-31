@@ -98,7 +98,7 @@ $address->save();
    ```php
    $user->address()->updateOrCreate([], ['name' => 'New Address']);
    ```
-```
+
 
 ### Added Critical Missing Parts:
 1. **Inverse relationship** (`belongsTo`)  

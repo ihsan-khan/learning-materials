@@ -52,3 +52,4 @@ Note: In the original query we used `LOWER(name)` first to make it case-insensit
 </details>
 
 **2. What is constrained in SQL and what is purpose of using it**
+**3. What is cascadeOnDelete in SQL and what is purpose of using it**

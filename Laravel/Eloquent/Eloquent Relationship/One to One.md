@@ -1,10 +1,8 @@
-## **One to One relationship**
-Here's the converted markdown (`.md`) file with proper Laravel relationship syntax corrections and formatting:
-
-```markdown
 # Laravel Eloquent Relationships
 
 ## One-to-One Relationship
+
+```markdown
 
 ```php
 // User model
@@ -64,11 +62,3 @@ $users = User::doesntHave('posts')->get();  // Fixed method
 5. Removed invalid syntax (`wheredoesnt Have`)
 ```
 
-This markdown file:
-1. Organizes content with clear headings
-2. Uses proper code blocks with PHP syntax highlighting
-3. Includes comments explaining fixes
-4. Maintains all the original query examples while correcting syntax
-5. Adds proper spacing for readability
-
-Would you like me to add any additional sections like Many-to-Many relationships or polymorphic relations?

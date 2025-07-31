@@ -50,3 +50,5 @@ REPLACE(original_string, search_string, replacement_string)
 Note: In the original query we used `LOWER(name)` first to make it case-insensitive: `REPLACE(LOWER(name), 'a', '')`
 </ul>
 </details>
+
+**2. What is constrained in SQL and what is purpose of using it**

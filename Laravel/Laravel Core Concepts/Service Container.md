@@ -171,9 +171,7 @@ The service container is what makes Laravel's dependency injection so powerful a
 <details>
 	<summary><b>View Answer</b></summary>
 <ul>
-Great question! You're absolutely right that in many simple cases, you **don't need to explicitly bind** classes to Laravel's service container. Let me clarify when and why you might want to do it anyway.
 
----
 
 ## **When Laravel's Auto-Resolution Works Without Binding**
 

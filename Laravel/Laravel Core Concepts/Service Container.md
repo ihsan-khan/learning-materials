@@ -166,8 +166,7 @@ public function welcome()
 
 The service container is what makes Laravel's dependency injection so powerful and is fundamental to many of Laravel's features like service providers, facades, and middleware.
 
-## 
-**When we need Binding?**
+## When we need Binding?
 
 <details>
 	<summary><b>View Answer</b></summary>
@@ -284,10 +283,10 @@ Even if Laravel can auto-resolve a class, you might still bind it explicitly for
 
 Would you like a practical example comparing auto-resolution vs. explicit binding? 😊
 </ul>
-</details>
 <details>
-	<summary><b>Practical Example:</b></summary>
+	<summary><b>Practical Example of binding:</b></summary>
 <ul>
+
 # Practical Example: Auto-Resolution vs Explicit Binding in Laravel
 
 Let's compare both approaches using a simple `NotificationService` example.
@@ -448,4 +447,6 @@ $this->app->bind(NotifierInterface::class, SmsNotifier::class);
 
 No need to change any controllers! This is the power of Laravel's service container.
 </ul>
+</details>
+
 </details>

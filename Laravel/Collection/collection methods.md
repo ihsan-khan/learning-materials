@@ -5,6 +5,7 @@ A comprehensive list of all Laravel Collection methods organized by category:
 <details>
 	<summary><b>View Detail</b></summary>
 <ul>
+
 # **Laravel Collection `map()` Method - Detailed Explanation**
 
 ## **What is `map()`?**

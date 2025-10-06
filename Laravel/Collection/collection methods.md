@@ -6,7 +6,7 @@ A comprehensive list of all Laravel Collection methods organized by category:
 	<summary><b>View Detail</b></summary>
 <ul>
 
-# **Laravel Collection `map()` Method - Detailed Explanation**
+## **Laravel Collection `map()` Method - Detailed Explanation**
 
 ## **What is `map()`?**
 The `map()` method iterates over each item in a collection, applies a callback function to it, and returns a new collection with the modified items.

@@ -3,7 +3,7 @@ A comprehensive list of all Laravel Collection methods organized by category:
 ## **Transformation Methods**
 - `map()` - Transform each item
 <details>
-	<summary><b>View Answer</b></summary>
+	<summary><b>View Detail</b></summary>
 <ul>
 # **Laravel Collection `map()` Method - Detailed Explanation**
 
@@ -282,6 +282,7 @@ $users = User::all()->map(function ($user) {
 The `map()` method is one of the most powerful and frequently used collection methods in Laravel, essential for data transformation tasks!
 </ul>
 </details>
+
 - `transform()` - Transform the collection itself
 - `flatMap()` - Transform then flatten
 - `pluck()` - Extract values for a given key
